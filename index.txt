@@ -1,0 +1,12 @@
+Select * FROM twitter.users;
+
+INSERT INTO users (first_name, last_name, handle)
+VALUES ('Pedro', 'Picapiedra', 'picador');
+
+
+UPDATE twitter.users
+SET first_name = ' esoeso ', last_name = 'ddd'
+WHERE  id= 2
+
+DELETE FROM users
+WHERE id  =9;
