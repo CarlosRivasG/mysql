@@ -1,0 +1,54 @@
+***Consulta: crea 3 dojos nuevos***
+
+INSERT INTO dojos (name)
+VALUES ("CodeDojo"), ("DojoLabDev"), ("DevDojo")
+
+***Consulta: elimina los 3 dojos que acabas de crear***
+
+DELETE FROM dojos
+WHERE dojos.id = 3;
+
+DELETE FROM dojos
+WHERE dojos.id = 2;
+
+DELETE FROM dojos
+WHERE dojos.id = 1;
+
+****Consulta: crea 3 dojos nuevos**
+
+INSERT INTO dojos (name)
+VALUES ("x-TrenDojo"), ("Devjo"), ("EscShifZZ")
+
+
+***Consulta: crea 3 ninjas que pertenezcan al primer dojo
+
+INSERT INTO ninjas (first_name, last_name, Dojos_id, created_at, update_at )
+VALUES ("carlos", "rivas", 1, now(), now()), ("Cesar", "saragozo", 1, now(), now()), 
+("rey", "loco", 1, now(), now()); 
+
+***Consulta: crea 3 ninjas que pertenezcan al segundo dojo
+
+INSERT INTO ninjas (first_name, last_name, Dojos_id, created_at, update_at )
+VALUES ("Freddy", "Vegas", 2, now(), now()), ("Romulo", "Santos", 2, now(), now()), 
+("Principe", "Perverso", 2, now(), now());
+
+***Consulta: crea 3 ninjas que pertenezcan al tercer dojo
+
+INSERT INTO ninjas (first_name, last_name, Dojos_id, created_at, update_at )
+VALUES ("Ally", "Guevara", 3, now(), now()), ("Detroy", "Roca", 3, now(), now()), 
+("Ricardo", "Peñas", 3, now(), now()); 
+
+***Consulta: crea 3 ninjas que pertenezcan al tercer dojo
+
+SELECT * FROM ninjas
+WHERE dojos_id = 1
+
+***Consulta: recupera todos los ninjas del último dojo 
+
+SELECT * FROM ninjas
+WHERE dojos_id = 3
+
+****Consulta: recupera el dojo del último ninja
+
+SELECT * FROM ninjas
+WHERE id = 9
