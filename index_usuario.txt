@@ -1,0 +1,33 @@
+****Consulta: crea 3 usuarios nuevos
+
+INSERT INTO  users (username)
+VALUES ("RockStar5"), ("Pedriño"), ("Retroloco")
+
+*****Consulta: recupera todos los usuarios
+
+SELECT * FROM users;
+
+***Consulta: recupera el primer usuario que usa su dirección de correo electrónico***
+
+SELECT *FROM users 
+WHERE email = "loco@gmail.com"; 
+
+***Consulta: recupera el último usuario que usa su id***
+
+SELECT *FROM users 
+WHERE id = 3;
+
+***Consulta: cambia el usuario con id=3 para que su apellido sea Panqueques***
+
+UPDATE users SET username = "panqueques"
+WHERE users.id = 3
+
+***Consulta: elimina el usuario con id=2 de la base de datos
+
+DELETE FROM  users
+WHERE users.id = 2;
+
+***Consulta: obtén todos los usuarios, ordenados por su nombre
+
+SELECT * FROM users
+ORDER BY username DESC;
