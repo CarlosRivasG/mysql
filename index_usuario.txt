@@ -30,4 +30,4 @@ WHERE users.id = 2;
 ***Consulta: obtén todos los usuarios, ordenados por su nombre
 
 SELECT * FROM users
-ORDER BY username DESC;
+ORDER BY username DESC
