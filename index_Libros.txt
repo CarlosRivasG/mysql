@@ -1,0 +1,84 @@
+
+
+***Consulta: crea 5 usuarios diferentes: Jane Austen, Emily Dickinson, Fyodor Dostoevsky, William Shakespeare, Lau Tzu
+
+INSERT INTO users (name1, name2, created_at, updated_at)
+VALUE ("Jane", "Austen", now(), now()),("Emily", "Dickinson", now(), now()),("Fyodor", "Dostoevsky", now(), now()),("William", "Shakespeare", now(), now()),("Lau", "Tzu", now(), now());
+
+
+***Consulta: crea 5 libros con los siguientes nombres: C Sharp, Java, Python, PHP, Ruby
+
+INSERT INTO books(title, num_pag, created_at, updated_at)
+VALUES ("C Sharp",500, now(), now()), ("Java",600 , now(), now()), ("Python", 900, now(), now()), ("PHP", 750, now(), now()), ("Ruby",5000, now(), now());
+
+
+***Consulta: cambia el nombre del libro de C Sharp a C#
+
+UPDATE libreria.books
+SET title = "C#"
+WHERE id = 1;
+
+***Consulta: cambia el nombre del cuarto usuario a Bill
+
+UPDATE libreria.users
+SET name1 = "Bill"
+WHERE id = 4;
+
+
+***Consulta: haz que el primer usuario marque como favorito los 2 primeros libros
+
+INSERT INTO  favorites( user_id, book_id)
+VALUES (1,1), (1,2)
+
+***Consulta: haz que el segundo usuario marque como favorito los primeros 3 libros
+
+INSERT INTO  favorites( user_id, book_id)
+VALUES (2,1), (2,2), (2,3)
+
+***Consulta: haz que el tercer usuario marque como favorito los 4 primeros libros
+
+INSERT INTO  favorites( user_id, book_id)
+VALUES (3,1), (3,2), (3,3), (3,4)
+
+***Consulta: Haz que el cuarto usuario marque como favorito todos los libros
+
+INSERT INTO  favorites( user_id, book_id)
+VALUES (4,1), (4,2), (4,3), (4,4), (4,4),(4,5)
+
+
+***Consulta: recupera todos los usuarios que marcaron como favorito el tercer libro
+
+SELECT * FROM books
+JOIN favorites on books.id = favorites.book_id
+JOIN users on users.id = favorites.user_id
+WHERE books.id = 3;
+
+***Consulta: elimina el primer usuario de los favoritos del tercer libro
+
+DELETE FROM favorites
+WHERE book_id = 3
+AND user_id = 2;
+
+***Consulta: Haz que el quinto usuario marque como favorito el segundo libro
+
+INSERT INTO favorites (user_id,book_id)
+VALUES (5,2);
+
+****Encuentra todos los libros que el tercer usuario marcó como favoritos
+
+SELECT * FROM books
+JOIN favorites on books.id = favorites.book_id
+JOIN users on users.id = favorites.user_id
+WHERE users.id = 3;
+
+***Consulta: encuentra todos los usuarios que marcaron como favorito el quinto libro
+
+SELECT * FROM books
+JOIN favorites on books.id = favorites.book_id
+JOIN users on users.id = favorites.user_id
+WHERE books.id = 5;
+
+
+
+
+
